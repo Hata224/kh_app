@@ -1,0 +1,15 @@
+current directory: /Users/hata_k/environment/kh_app/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+/Users/hata_k/.rbenv/versions/2.6.0/bin/ruby -I /Users/hata_k/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191122-72859-8m5caa.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hata_k/environment/kh_app/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/hata_k/environment/kh_app/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/hata_k/environment/kh_app/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20191122-72859-zsq1lp

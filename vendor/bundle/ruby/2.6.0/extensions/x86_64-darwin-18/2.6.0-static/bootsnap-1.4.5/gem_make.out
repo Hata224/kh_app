@@ -1,0 +1,15 @@
+current directory: /Users/hata_k/environment/kh_app/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/ext/bootsnap
+/Users/hata_k/.rbenv/versions/2.6.0/bin/ruby -I /Users/hata_k/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191122-72859-ib2nrd.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hata_k/environment/kh_app/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/hata_k/environment/kh_app/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/hata_k/environment/kh_app/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20191122-72859-env2i8/bootsnap
