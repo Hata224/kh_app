@@ -296,15 +296,13 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-  config.mailer_sender = "info@nagomihealth.com"
+  config.mailer_sender = 'info@nagomihealth.com'
 
-  #アカウントロック設定
+  # アカウントロック設定
   config.unlock_strategy = :email
   config.maximum_attempts = 4
   config.unlock_in = 30.minutes
 
-  #タイムアウト設定
+  # タイムアウト設定
   config.timeout_in = 3.minutes
-
-
 end
