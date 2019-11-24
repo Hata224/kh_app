@@ -1,0 +1,16 @@
+--2019-11-24 16:16:15--  https://raw.github.com/svenfuchs/rails-i18n/master/rails/locale/ja.yml
+raw.github.com (raw.github.com) をDNSに問いあわせています... 151.101.108.133
+raw.github.com (raw.github.com)|151.101.108.133|:443 に接続しています... 接続しました。
+HTTP による接続要求を送信しました、応答を待っています... 301 Moved Permanently
+場所: https://raw.githubusercontent.com/svenfuchs/rails-i18n/master/rails/locale/ja.yml [続く]
+--2019-11-24 16:16:16--  https://raw.githubusercontent.com/svenfuchs/rails-i18n/master/rails/locale/ja.yml
+raw.githubusercontent.com (raw.githubusercontent.com) をDNSに問いあわせています... 151.101.108.133
+raw.githubusercontent.com (raw.githubusercontent.com)|151.101.108.133|:443 に接続しています... 接続しました。
+HTTP による接続要求を送信しました、応答を待っています... 200 OK
+長さ: 5117 (5.0K) [text/plain]
+`ja.yml' に保存中
+
+     0K ....                                                  100% 1.09M=0.004s
+
+2019-11-24 16:16:16 (1.09 MB/s) - `ja.yml' へ保存完了 [5117/5117]
+
