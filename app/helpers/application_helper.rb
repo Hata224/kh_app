@@ -4,7 +4,7 @@ module ApplicationHelper
   def full_title(page_title = '')
     main_title = 'クラコピ'
     if page_title.empty?
-      mail_title
+      main_title
     else
       page_title + ' | ' + main_title
     end
