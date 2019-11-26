@@ -28,7 +28,7 @@
          <li class="nav-item nav-link"><%= link_to 'ユーザー情報変更', edit_user_registration_path %></li>
                 <li class="nav-item nav-link"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
                 <% else %>
-                <li class="nav-item nav-link"><%= link_to '無料登録', new_user_registration_path %></li>
+                <li class="nav-item nav-link"><%= link_to '新規登録', new_user_registration_path %></li>
                 <button type="button" class="btn btn-warning"><li class="nav-item nav-link"><%= link_to 'ログイン', new_user_session_path %></li></button>
                 <% end %>
     </ul>
