@@ -1,5 +1,8 @@
-<p>Welcome <%= @email %>!</p>
+<p><%= @resource.username %>様</p>
+<p>クラコピの仮会員登録が完了いたしました。</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>下記のリンクから本登録の完了をお願いいたします。</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to '会員登録を完了する', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>今後ともクラコピをよろしくお願いいたします。</p>
