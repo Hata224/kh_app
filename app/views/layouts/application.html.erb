@@ -25,7 +25,7 @@
       <li class="nav-item nav-link"><%= link_to 'クラコピとは', "#" %><span class="sr-only">(current)</span></li>
       <% if user_signed_in? %>
       <li class="nav-item nav-link"><strong><%= link_to current_user.username, pages_show_path %></strong></li>
-         <li class="nav-item nav-link"><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+         <li class="nav-item nav-link"><%= link_to 'ユーザー情報変更', edit_user_registration_path %></li>
                 <li class="nav-item nav-link"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
                 <% else %>
                 <li class="nav-item nav-link"><%= link_to '無料登録', new_user_registration_path %></li>
