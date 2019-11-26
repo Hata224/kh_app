@@ -12,22 +12,28 @@
   </head>
 
   <body>
-<header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to "クラコピ", / , id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-          <li><strong><%= link_to current_user.username, pages_show_path %></strong></li>
-                <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
-                <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="navbar-brand">
+  <%= link_to 'クラコピ', "/" %>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav">
+      <li class="nav-item nav-link"><%= link_to 'クラコピとは', "#" %><span class="sr-only">(current)</span></li>
+      <% if user_signed_in? %>
+      <li class="nav-item nav-link"><strong><%= link_to current_user.username, pages_show_path %></strong></li>
+         <li class="nav-item nav-link"><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+                <li class="nav-item nav-link"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
                 <% else %>
-                <li><%= link_to '無料登録', new_user_registration_path %></li>
-                <li><%= link_to 'ログイン', new_user_session_path %></li>
+                <li class="nav-item nav-link"><%= link_to '無料登録', new_user_registration_path %></li>
+                <button type="button" class="btn btn-warning"><li class="nav-item nav-link"><%= link_to 'ログイン', new_user_session_path %></li></button>
                 <% end %>
-          </ul>
-        </nav>
-      </div>
+    </ul>
+  </div>
+</nav>
     </header>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
