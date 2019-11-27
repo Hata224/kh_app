@@ -15,13 +15,6 @@
 @charset "utf-8";
 @import "bootstrap";
 
-body {
-  a:visited {
-    color: #000;
-    text-decoration: none;
-  }
-}
-
 .container-login {
   @extend .container-fluid;
   max-width: 576px;
@@ -47,4 +40,9 @@ header {
   height: 500px;
   width: 100%;
   background-size: cover;
+}
+
+a.navbar-brand img {
+  width: 125px;
+  height: 52.5px;
 }
