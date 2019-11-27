@@ -28,3 +28,17 @@
 .alert-alert {
   @extend .alert-danger;
 }
+
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border-bottom: solid 1px #bcbcbc;
+}
+
+.background {
+  background-image: url("/images/background.jpg");
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+}
