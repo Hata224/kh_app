@@ -15,6 +15,13 @@
 @charset "utf-8";
 @import "bootstrap";
 
+body {
+  a:visited {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
 .container-login {
   @extend .container-fluid;
   max-width: 576px;
