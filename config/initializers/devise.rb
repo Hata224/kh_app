@@ -305,4 +305,6 @@ Devise.setup do |config|
 
   # タイムアウト設定
   config.timeout_in = 3.minutes
+
+  config.omniauth :twitter, 'API Key', 'API Secret'
 end
