@@ -12,34 +12,46 @@
   </head>
 
   <body>
-<header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">クラコピ</a>
+<nav class="navbar navbar-expand-md navbar-light bg-white sticky-top">
+<div class="container-fluid">
+  <a class="navbar-brand" href="/"><img src="/images/logo.jpg"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <ul class="navbar-nav">
-      <li class="nav-item nav-link"><%= link_to 'クラコピとは', "#" %><span class="sr-only">(current)</span></li>
+    <ul class="navbar-nav ml-auto">
+    <li><form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="キーワードを入力" aria-label="Search">
+    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">検索</button>
+  </form></li>
+      <li class="nav-item"><%= link_to 'クラコピとは', "#", class:"nav-link" %></li>
       <% if user_signed_in? %>
-      <li class="nav-item nav-link"><strong><%= link_to current_user.username, pages_show_path %></strong></li>
-         <li class="nav-item nav-link"><%= link_to 'アカウント情報変更', edit_user_registration_path %></li>
-                <li class="nav-item nav-link"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      <li class="nav-item"><strong><%= link_to current_user.username, pages_show_path, class:"nav-link" %></strong></li>
+         <li class="nav-item"><%= link_to 'アカウント情報変更', edit_user_registration_path, class:"nav-link" %></li>
+                <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, class:"nav-link", method: :delete %></li>
                 <% else %>
-                <li class="nav-item nav-link"><%= link_to '新規登録', new_user_registration_path %></li>
-                <li class="nav-item nav-link"><%= link_to 'ログイン', new_user_session_path %></li>
+                <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class:"nav-link" %></li>
+                <li class="nav-item"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to 'ログイン', new_user_session_path %></button></li>
                 <% end %>
     </ul>
   </div>
+  </div>
   </nav>
-    </header>
 
-  <p class="notice alert-info"><%= notice %></p>
+  <p class="notice alert-success"><%= notice %></p>
   <p class="alert-danger"><%= alert %></p>
-<div class="container">
     <%= yield %>
-    </div>
+    <footer>
+  <address>Copyright(C)2019 K.HATA,Allright Reserved.</address>
+</footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+$('.navbar-nav>li>a , .dropdown-menu>a').on('click', function(){
+    if(this.id != 'navbarDropdown'){
+      $('.navbar-collapse').collapse('hide');
+    }
+});
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   </body>

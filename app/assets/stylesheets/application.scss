@@ -15,12 +15,20 @@
 @charset "utf-8";
 @import "bootstrap";
 
+body {
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ,
+    Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+}
+
 .container-login {
   @extend .container-fluid;
   max-width: 576px;
   padding: 2rem;
 }
 
+.alert-danger {
+  margin-top: 16px;
+}
 .alert-notice {
   @extend .alert-info;
 }
@@ -29,15 +37,100 @@
   @extend .alert-danger;
 }
 
-header {
-  width: 100%;
-  background-color: #fff;
-  border-bottom: solid 1px #bcbcbc;
+.notice {
+  margin-bottom: -16px;
 }
 
-.background {
-  background-image: url("/images/background.jpg");
+nav {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: solid 1px gray;
+}
+
+.top-container {
+  background-image: url("/images/bg.jpg");
   height: 500px;
   width: 100%;
   background-size: cover;
+  text-align: center;
+  color: white;
+  h1 {
+    font-size: 70px;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  p {
+    font-size: 20px;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+
+a.navbar-brand img {
+  width: 130px;
+  height: 50px;
+}
+
+.btn-link {
+  padding-top: -4px;
+  .btn {
+    color: #fff;
+    max-width: 576px;
+    padding: 10px 75px;
+    background-color: #fcb01c;
+    border-color: #fcb01c;
+    font-size: 23px;
+    margin-top: 15px;
+    border-radius: 25px;
+    font-weight: 800;
+    box-shadow: 2px 2px 4px gray;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: #fcc41c;
+      border-color: #fcc41c;
+    }
+  }
+}
+
+.button-link {
+  padding-top: -4px;
+  .btn {
+    color: #fff;
+    max-width: 576px;
+    padding: 10px 120px;
+    // background-color: #fcb01c;
+    // border-color: ;
+    font-size: 23px;
+    margin-top: 10px;
+    border-radius: 25px;
+    font-weight: 800;
+    box-shadow: 2px 2px 4px gray;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    // &:hover {
+    //   background-color: #fcc41c;
+    //   border-color: #fcc41c;
+    // }
+  }
+}
+
+footer {
+  font-size: 5px;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  padding-bottom: -11px;
+}
+
+footer address {
+  color: #000;
+  letter-spacing: 5px;
+  font-style: normal;
+  border-bottom: solid 1px gray;
+  border-top: solid 1px gray;
 }
