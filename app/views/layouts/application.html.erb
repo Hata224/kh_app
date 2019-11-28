@@ -20,6 +20,10 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <ul class="navbar-nav ml-auto">
+    <li><form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="キーワードを入力" aria-label="Search">
+    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">検索</button>
+  </form></li>
       <li class="nav-item"><%= link_to 'クラコピとは', "#", class:"nav-link" %></li>
       <% if user_signed_in? %>
       <li class="nav-item"><strong><%= link_to current_user.username, pages_show_path, class:"nav-link" %></strong></li>
@@ -33,9 +37,13 @@
   </div>
   </div>
   </nav>
+
   <p class="notice alert-success"><%= notice %></p>
   <p class="alert-danger"><%= alert %></p>
     <%= yield %>
+    <footer>
+  <address>Copyright(C)2019 K.HATA,Allright Reserved.</address>
+</footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>
 $('.navbar-nav>li>a , .dropdown-menu>a').on('click', function(){

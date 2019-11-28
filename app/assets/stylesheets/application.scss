@@ -56,7 +56,7 @@ nav {
   color: white;
   h1 {
     font-size: 70px;
-    padding-top: 110px;
+    padding-top: 100px;
     padding-bottom: 20px;
     letter-spacing: 2px;
     font-weight: bold;
@@ -94,4 +94,43 @@ a.navbar-brand img {
       border-color: #fcc41c;
     }
   }
+}
+
+.button-link {
+  padding-top: -4px;
+  .btn {
+    color: #fff;
+    max-width: 576px;
+    padding: 10px 120px;
+    // background-color: #fcb01c;
+    // border-color: ;
+    font-size: 23px;
+    margin-top: 10px;
+    border-radius: 25px;
+    font-weight: 800;
+    box-shadow: 2px 2px 4px gray;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    // &:hover {
+    //   background-color: #fcc41c;
+    //   border-color: #fcc41c;
+    // }
+  }
+}
+
+footer {
+  font-size: 5px;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  padding-bottom: -11px;
+}
+
+footer address {
+  color: #000;
+  letter-spacing: 5px;
+  font-style: normal;
+  border-bottom: solid 1px gray;
+  border-top: solid 1px gray;
 }
