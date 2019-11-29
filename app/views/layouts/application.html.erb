@@ -3,7 +3,7 @@
   <head>
   <meta chaeset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/cあss/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -27,7 +27,7 @@
       <li class="nav-item"><%= link_to 'クラコピとは', "#", class:"nav-link" %></li>
       <% if user_signed_in? %>
       <li class="nav-item"><strong><%= link_to current_user.username, pages_show_path, class:"nav-link" %></strong></li>
-         <li class="nav-item"><%= link_to 'アカウント情報変更', edit_user_registration_path, class:"nav-link" %></li>
+         <li class="nav-item"><%= link_to 'ユーザー情報変更', edit_user_registration_path, class:"nav-link" %></li>
                 <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, class:"nav-link", method: :delete %></li>
                 <% else %>
                 <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class:"nav-link" %></li>
@@ -40,6 +40,7 @@
 
   <p class="notice alert-success"><%= notice %></p>
   <p class="alert-danger"><%= alert %></p>
+
     <%= yield %>
     <footer>
   <address>Copyright(C)2019 K.HATA,Allright Reserved.</address>

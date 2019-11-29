@@ -3,10 +3,11 @@
     <h1>クラコピ</h1>
     <p>ネーミングとキャッチコピーの募集と提案ができるサービス</p>
      <div class="button-link">
-    <button type="button" class="btn btn-primary">新規登録</button>
+    <%= link_to '新規登録', new_user_registration_path, class:"btn btn-primary" %>
     </div>
     <div class="btn-link">
-    <button type="button" class="btn btn-warning">かんたんログイン</button>
-    </div>
-
+    <%= link_to 'かんたんログイン', users_guest_sign_in_path, class:"btn btn-warning", method: :post %>
 </div>
+ <footer>
+  <address>Copyright(C)2019 K.HATA,Allright Reserved.</address>
+</footer>
