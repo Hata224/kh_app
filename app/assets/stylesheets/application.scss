@@ -28,6 +28,7 @@ body {
 
 .alert-danger {
   margin-top: 16px;
+  margin-bottom: 0px;
 }
 .alert-notice {
   @extend .alert-info;
