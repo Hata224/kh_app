@@ -37,6 +37,10 @@ body {
   @extend .alert-danger;
 }
 
+.btn-block {
+  color: #fff;
+}
+
 .notice {
   margin-bottom: -16px;
 }
@@ -70,12 +74,12 @@ nav {
 
 footer {
   width: 100%;
-  background-color: #89c7de;
-  color: #fff;
+  background-color: #f1f3f4;
+  color: #000;
   text-align: center;
-  padding: 30px 0;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  border-top: solid 1px gray;
 }
 
 a.navbar-brand img {
@@ -112,8 +116,6 @@ a.navbar-brand img {
     color: #fff;
     max-width: 576px;
     padding: 10px 120px;
-    // background-color: #fcb01c;
-    // border-color: ;
     font-size: 23px;
     margin-top: 10px;
     border-radius: 25px;
@@ -122,25 +124,5 @@ a.navbar-brand img {
     display: inline-block;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-    // &:hover {
-    //   background-color: #fcc41c;
-    //   border-color: #fcc41c;
-    // }
   }
-}
-
-footer {
-  font-size: 5px;
-  width: 100%;
-  text-align: center;
-  background-color: #fff;
-  padding-bottom: -11px;
-}
-
-footer address {
-  color: #000;
-  letter-spacing: 5px;
-  font-style: normal;
-  border-bottom: solid 1px gray;
-  border-top: solid 1px gray;
 }
