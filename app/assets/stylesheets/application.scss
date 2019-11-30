@@ -49,7 +49,7 @@ body {
 nav {
   width: 100%;
   background-color: #fff;
-  border-bottom: solid 1px gray;
+  border-bottom: solid 1px lightgray;
 }
 
 .top-container {
@@ -75,12 +75,17 @@ nav {
 
 footer {
   width: 100%;
-  background-color: #f1f3f4;
-  color: #000;
+  background-color: #fff;
+  color: gray;
+  opacity: 0.5;
   text-align: center;
-  position: fixed;
   bottom: 0;
+  padding: 0;
+  font-size: 15px;
   border-top: solid 1px gray;
+  address {
+    margin-bottom: -16px;
+  }
 }
 
 a.navbar-brand img {
@@ -125,5 +130,15 @@ a.navbar-brand img {
     display: inline-block;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+  }
+}
+
+.jumbotron {
+  background-color: #fff;
+  margin-bottom: -32px;
+  h1 {
+    color: #008cef;
+    text-align: center;
+    font-weight: bold;
   }
 }
