@@ -28,6 +28,7 @@ body {
 
 .alert-danger {
   margin-top: 16px;
+  margin-bottom: 0px;
 }
 .alert-notice {
   @extend .alert-info;
@@ -61,7 +62,7 @@ nav {
   h1 {
     font-size: 70px;
     padding-top: 100px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     letter-spacing: 2px;
     font-weight: bold;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
@@ -74,12 +75,17 @@ nav {
 
 footer {
   width: 100%;
-  background-color: #f1f3f4;
-  color: #000;
+  background-color: #fff;
+  color: gray;
+  opacity: 0.5;
   text-align: center;
-  position: fixed;
   bottom: 0;
+  padding: 0;
+  font-size: 15px;
   border-top: solid 1px gray;
+  address {
+    margin-bottom: -16px;
+  }
 }
 
 a.navbar-brand img {
@@ -125,4 +131,67 @@ a.navbar-brand img {
     cursor: pointer;
     transition: all 0.3s ease 0s;
   }
+}
+
+.jumbotron {
+  background-color: #fff;
+  margin-bottom: -32px;
+  h1 {
+    color: #008cef;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.jumbotron {
+  padding-top: 40px;
+  .button-jumbotron {
+    border-radius: 5px;
+    text-align: center;
+    p {
+      margin-bottom: 30px;
+    }
+    h2 {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.btn-jumbotron {
+  text-align: center;
+}
+
+.container {
+  padding: 0 10px;
+  max-width: 700px;
+  .jumbotron-list {
+    background: whitesmoke;
+    padding: 0 8px;
+    position: relative;
+    margin: 0 30px;
+    li {
+      line-height: 1.5;
+      padding: 8px 0 8px 20px;
+      border-bottom: 2px solid white;
+      list-style-type: none !important;
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.fa-check {
+  color: #668ad8;
+  margin-right: 18px;
+  text-align: center;
+}
+
+.jumbotron-p {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.fa-lightbulb {
+  padding-left: 10px;
 }
