@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   root to: 'pages#home'
   get 'pages/show'
+  resources :users, only: [:show]
 end
