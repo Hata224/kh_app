@@ -40,9 +40,11 @@ end
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.1.1'
 gem 'carrierwave'
+gem 'carrierwave'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'fog'
 gem 'jquery-rails'
 gem 'rails-i18n', '~> 5.1'
