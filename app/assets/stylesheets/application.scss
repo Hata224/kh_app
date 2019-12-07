@@ -204,3 +204,28 @@ a.navbar-brand img {
 .fa-user {
   padding-right: 3px;
 }
+
+.circle-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.icon_image {
+  width: 200px;
+  height: 200px;
+  //サイズ指定
+  border-radius: 100px;
+  //画像を丸くする
+  object-fit: cover;
+  //タテヨコ比を変えないままトリミング
+}
+
+// .field {
+//   margin-bottom: 12px;
+// }
+
+.form-image {
+  border: 1px solid lightgray;
+}
