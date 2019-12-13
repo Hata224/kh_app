@@ -21,12 +21,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <ul class="navbar-nav ml-auto">
-    <li><form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="キーワードを入力" aria-label="Search">
-    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">検索</button>
-  </form></li>
       <% if user_signed_in? %>
       <li class="nav-item"><strong><%= link_to current_user.username, pages_show_path, class:"nav-link" %></strong></li>
+       <li class="nav-item"><%= link_to  new_post_path, class:"nav-link" do %>投稿作成</li><% end %>
          <li class="nav-item"><%= link_to  edit_user_registration_path, class:"nav-link" do %><i class="fas fa-user-edit i-user-edit"></i>ユーザー情報変更</li><% end %>
                 <li class="nav-item"><%= link_to destroy_user_session_path, class:"nav-link", method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト</li>
                 <% end %>
