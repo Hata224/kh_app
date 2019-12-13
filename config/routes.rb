@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
 
-  get 'pages/show'
+  get 'pages/:id', to: 'pages#show'
+  get 'posts/index', to: 'posts#index'
+  resources :posts
   resources :users, only: [:show]
 end
