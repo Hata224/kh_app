@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post, notice: '投稿しました'
+      redirect_to posts_path, notice: '投稿しました'
     else
       render :new, alert: '投稿できませんでした'
     end
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: '投稿内容を変更しました'
+      redirect_to posts_path, notice: '投稿内容を変更しました'
     else
       render :edit, alert: '投稿内容を変更できませんでした'
     end
