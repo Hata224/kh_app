@@ -1,8 +1,4 @@
-<div class="container">
-<div class="col-md-12">
-<h1>投稿の編集</h1>
-<div class="new-post">
-<%= form_for @post do |f|%>
+<%= form_for post do |f|%>
 <div class="form-group">
 <%= f.label :title, "タイトル" %>
 <%= f.text_field :title, autofocus: true, class: "form-control" %>
@@ -11,9 +7,5 @@
 <%= f.label :title, "本文" %>
 <%= f.text_area :body, rows: 8, autofocus: true, class: "form-control" %>
 </div>
-<%= f.submit '投稿を修正する', class: "btn btn-success" %>
+<%= f.submit '投稿する', class: "btn btn-primary" %>
 <% end %>
-
-</div>
-</div>
-</div>
