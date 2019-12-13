@@ -26,17 +26,17 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: '更新しました'
+      redirect_to @post, notice: '投稿内容を変更しました'
     else
-      render :edit, alert: '更新できませんでした'
+      render :edit, alert: '投稿内容を変更できませんでした'
     end
   end
 
   def destroy
     if @post.destroy
-      redirect_to posts_path, notice: '削除しました'
+      redirect_to posts_path, notice: '投稿を削除しました'
     else
-      redirect_to posts_path, alerts: '削除できませんでした'
+      redirect_to posts_path, alerts: '投稿を削除できませんでした'
     end
   end
 
