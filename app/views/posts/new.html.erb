@@ -1,9 +1,18 @@
 <div class="container">
 <div class="col-md-12">
-<h1>新規投稿作成</h1>
-<p class="title"><%= @post.title %></p>
-<p class="text-right">
-<%= @post.created_at.strftime("%Y年%m月%d日") %>
-</p>
+<h1>投稿作成</h1>
+<div class="new-post">
+<%= form_for @post do |f|%>
+<div class="form-group">
+<%= f.label :title, "タイトル" %>
+<%= f.text_field :title, autofocus: true, class: "form-control" %>
+</div>
+<div class="form-group">
+<%= f.label :title, "本文" %>
+<%= f.text_area :body, rows: 8, autofocus: true, class: "form-control" %>
+</div>
+<%= f.submit '投稿する', class: "btn btn-primary" %>
+<% end %>
+</div>
 </div>
 </div>
