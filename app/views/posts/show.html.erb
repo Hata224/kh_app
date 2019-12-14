@@ -7,5 +7,5 @@
 </p>
 </div>
 <%= link_to '投稿を編集', edit_post_path(@post), class: "btn btn-success btn-md" %>
-<%= link_to '投稿を削除', post_path(@post), method: :delete, class: "btn btn-danger btn-md" %>
+<%= link_to '投稿を削除', post_path(@post), data: { confirm: "投稿を削除しますか？この操作は取り消せません。"},　method: :delete, class: "btn btn-danger btn-md" %>
 </div>

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_post, only: %i[show edit update destroy]
-
   def index
     @posts = Post.order(created_at: :desc)
   end
@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path, notice: '投稿しました'
     else

@@ -11,6 +11,8 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :profile, length: { maximum: 200 }
 
+  has_many :posts, dependent: :destroy
+
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
