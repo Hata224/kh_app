@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   end
 
   get 'pages/show'
+  get 'posts/index', to: 'posts#index'
+  resources :posts
   resources :users, only: [:show]
 end
