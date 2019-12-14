@@ -37,7 +37,7 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'bootsnap', '>= 1.1.0', require: false
+# gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap', '~> 4.1.1'
 gem 'carrierwave'
 gem 'devise'

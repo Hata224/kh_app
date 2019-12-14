@@ -8,7 +8,7 @@
     <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
       <li class="nav-item"><strong><%= link_to current_user.username, pages_show_path, class:"nav-link" %></strong></li>
-      <li class="nav-item"><%= link_to  posts_path, class:"nav-link" do %><i class="far fa-newspaper"></i>投稿一覧</li><% end %>
+      <li class="nav-item"><%= link_to  posts_path, class:"nav-link" do %><i class="far fa-newspaper"></i>案件一覧</li><% end %>
        <li class="nav-item"><%= link_to  new_post_path, class:"nav-link" do %><i class="fas fa-paper-plane"></i>投稿する</li><% end %>
          <li class="nav-item"><%= link_to  edit_user_registration_path, class:"nav-link" do %><i class="fas fa-user-edit i-user-edit"></i>ユーザー情報変更</li><% end %>
                 <li class="nav-item"><%= link_to destroy_user_session_path, class:"nav-link", method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト</li>

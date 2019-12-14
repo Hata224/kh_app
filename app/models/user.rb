@@ -13,6 +13,10 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
 
+  def posts
+    Post.where(user_id: id)
+end
+
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64

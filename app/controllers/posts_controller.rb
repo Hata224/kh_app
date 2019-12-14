@@ -3,11 +3,17 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_post, only: %i[show edit update destroy]
+  before_action :validate_user, only: %i[edit update destroy]
+
   def index
     @posts = Post.order(created_at: :desc)
+    @post = Post.find_by(params[:id])
+    @user = User.find_by(id: @post.user_id)
   end
 
-  def show; end
+  def show
+    @user = User.find_by(id: @post.user_id)
+  end
 
   def new
     @post = Post.new
@@ -49,5 +55,11 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body)
+  end
+
+  def validate_user
+    if @post.user != current_user
+      redirect_to posts_path, alert: '投稿者以外はこの操作はできません'
+    end
   end
 end
