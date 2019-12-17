@@ -11,9 +11,12 @@
 <%= f.label :title, "本文" %>
 <%= f.text_area :body, rows: 8, autofocus: true, class: "form-control" %>
 </div>
+<div class="form-group">
+<i class="fas fa-camera"></i><%= f.label :title, "画像の挿入・変更", class: "post-image-title" %><br>
+<%= f.attachment_field :image, class: "post-image" %>
+</div>
 <%= f.submit '投稿内容を変更する', class: "btn btn-success btn-block" %>
 <% end %>
-
 </div>
 </div>
 </div>
