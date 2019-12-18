@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
 
+  attachment :avatar
+
   def posts
     Post.where(user_id: id)
 end
