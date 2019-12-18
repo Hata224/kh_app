@@ -13,6 +13,8 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find_by(id: @post.user_id)
+    @comments = @post.comments.includes(:user).all
+    @comment = @post.comments.build(user_id: current_user.id) if current_user
   end
 
   def new
@@ -54,7 +56,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :image)
+    params.require(:post).permit(:title, :body, :image, :content)
   end
 
   def validate_user

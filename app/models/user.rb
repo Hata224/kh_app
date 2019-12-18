@@ -9,9 +9,12 @@ class User < ApplicationRecord
          :confirmable, :lockable, :timeoutable
 
   validates :username, presence: true
-  validates :profile, length: { maximum: 200 }
+  validates :profile, length: { maximum: 500 }
 
   has_many :posts, dependent: :destroy
+  has_many :comments
+
+  attachment :avatar
 
   def posts
     Post.where(user_id: id)
