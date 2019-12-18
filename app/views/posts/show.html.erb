@@ -14,4 +14,30 @@
 <%= link_to '投稿を編集', edit_post_path(@post), class: "btn btn-success btn-md" %>
 <%= link_to '投稿を削除', post_path(@post.id), method: :delete, data: { confirm: "投稿を削除しますか？この操作は取り消せません。"}, class: "btn btn-danger btn-md" %>
 <% end %>
+<h3>提案リスト一覧</h3>
+<% @comments.each do |comment| %>
+  <div>
+    <%= link_to comment.user.username, user_path %>
+    <%= simple_format comment.content %>
+    <%= comment.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+    <% if comment.user_id == current_user.id %>
+    <%= link_to '提案文を削除', post_comment_path(@post.id), method: :delete, data: { confirm: "提案文を削除しますか？この操作は取り消せません。"}, class: "btn btn-danger btn-md" %>
+    <% end %>
+    <hr>
+  </div>
+<% end %>
+<% if @post.user_id != current_user.id %>
+<%= form_for [@post, @comment] do |f| %>
+<div class="form-group">
+    <%= f.label :提案内容 %>
+    <%= f.text_area :content, rows: 6, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.submit '提案する', class: 'btn btn-primary btn-block' %>
+  </div>
+<% end %>
+<% end %>
+
+
 </div>
