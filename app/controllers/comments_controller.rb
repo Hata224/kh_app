@@ -9,6 +9,8 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     if @comment.save
       redirect_to post_path(@post), notice: '提案しました'
+    elsif @comment.errors.any?
+      redirect_to post_path(@post), alert: 'メッセージを入力してください'
     else
       redirect_to post_path(@post), alert: '提案できませんでした'
     end

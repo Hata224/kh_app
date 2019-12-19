@@ -28,6 +28,8 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path, notice: '投稿しました'
+    elsif @post.errors.any?
+      redirect_to new_post_path, alert: 'メッセージを入力してください'
     else
       render :new, alert: '投稿できませんでした'
     end

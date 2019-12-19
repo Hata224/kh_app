@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :profile, length: { maximum: 500 }
 
   has_many :posts, dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   attachment :avatar
 
