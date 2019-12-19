@@ -14,7 +14,9 @@
 <%= link_to '投稿を編集', edit_post_path(@post), class: "btn btn-success btn-md" %>
 <%= link_to '投稿を削除', post_path(@post.id), method: :delete, data: { confirm: "投稿を削除しますか？この操作は取り消せません。"}, class: "btn btn-danger btn-md" %>
 <% end %>
+<hr>
 <h3>提案リスト一覧</h3>
+<hr>
 <% @comments.each do |comment| %>
   <div>
     <%= link_to comment.user.username, user_path %>
