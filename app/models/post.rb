@@ -5,5 +5,5 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true
   attachment :image
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end
