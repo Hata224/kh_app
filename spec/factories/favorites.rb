@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :like do
-    comment { nil }
+  factory :favorite do
+    post { nil }
     user { nil }
   end
 end

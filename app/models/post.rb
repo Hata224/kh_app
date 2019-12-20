@@ -6,4 +6,6 @@ class Post < ApplicationRecord
   validates :body, presence: true
   attachment :image
   has_many :comments, dependent: :destroy
+  has_many :favorites
+  has_many :favorited_users, through: :favorites, source: :user
 end
