@@ -9,6 +9,16 @@
 <p class="text-right">
 <%= @post.created_at.strftime("%Y年%m月%d日") %>
 </p>
+<h3>いいね件数: <%= @post.favorites.count %></h3>
+<% if current_user.already_favorited?(@post) %>
+  <%= button_to 'いいねを取り消す', post_favorite_path(@post), method: :delete %>
+<% else %>
+  <%= button_to 'いいね', post_favorites_path(@post) %>
+<% end %>
+<h2>いいねしたユーザー</h2>
+<% @post.favorited_users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>
 </div>
 <% if @post.user_id == current_user.id %>
 <%= link_to '投稿を編集', edit_post_path(@post), class: "btn btn-success btn-md" %>
@@ -31,7 +41,7 @@
 <% if @post.user_id != current_user.id %>
 <%= form_for [@post, @comment] do |f| %>
 <div class="form-group">
-    <%= f.label :提案内容 %>
+    <%= f.label :提案文作成 %>
     <%= f.text_area :content, rows: 6, autofocus: true, autocomplete: 'email', class: 'form-control' %>
   </div>
   <br>

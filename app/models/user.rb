@@ -13,7 +13,8 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
-
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_posts, through: :favolites, source: :post
   attachment :avatar
 
   def posts
@@ -26,5 +27,9 @@ end
       user.username = 'ゲスト'
       user.confirmed_at = Time.now
     end
+  end
+
+  def already_favorited?(post)
+    favorites.exists?(post_id: post.id)
   end
 end
