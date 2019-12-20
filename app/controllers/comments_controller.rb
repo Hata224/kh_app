@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :validate_user, only: %i[destroy]
+  before_action :validate_user, only: %i[create destroy]
 
   def create
     @post = Post.find(params[:post_id])
@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     else
       redirect_to post_path(@post), alert: '提案できませんでした'
     end
-  end
+   end
 
   def destroy
     @post = Post.find(params[:post_id])
