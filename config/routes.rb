@@ -11,9 +11,16 @@ Rails.application.routes.draw do
 
   get 'pages/show'
   get 'posts/index', to: 'posts#index'
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do
+      get :following, :followers
+    end
+  end
+
   resources :posts do
     resources :comments
     resources :favorites, only: %i[create destroy]
   end
+
+  resources :relationships, only: %i[create destroy]
 end
