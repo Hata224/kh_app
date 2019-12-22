@@ -37,7 +37,6 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-# gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap', '~> 4.1.1'
 gem 'carrierwave'
 gem 'devise'
@@ -47,6 +46,8 @@ gem 'devise-i18n-views'
 gem 'dotenv-rails'
 gem 'fog-aws'
 gem 'jquery-rails'
+gem 'kaminari', '~> 0.17.0'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'rails-i18n', '~> 5.1'
 gem 'refile', github: 'refile/refile', require: 'refile/rails'
 gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
