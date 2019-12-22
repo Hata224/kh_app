@@ -9,47 +9,15 @@
 <p class="text-right">
 <%= @post.created_at.strftime("%Y年%m月%d日") %>
 </p>
-<h3>いいね件数: <%= @post.favorites.count %></h3>
-<% if current_user.already_favorited?(@post) %>
-  <%= button_to 'いいねを取り消す', post_favorite_path(@post), method: :delete %>
-<% else %>
-  <%= button_to 'いいね', post_favorites_path(@post) %>
-<% end %>
-<h2>いいねしたユーザー</h2>
-<% @post.favorited_users.each do |user| %>
-  <li><%= user.email %></li>
-<% end %>
+<%= render 'posts/like' %>
 </div>
 <% if @post.user_id == current_user.id %>
 <%= link_to '投稿を編集', edit_post_path(@post), class: "btn btn-success btn-md" %>
 <%= link_to '投稿を削除', post_path(@post.id), method: :delete, data: { confirm: "投稿を削除しますか？この操作は取り消せません。"}, class: "btn btn-danger btn-md" %>
 <% end %>
 <hr>
-<h3>提案リスト一覧</h3>
-<hr>
-<% @comments.each do |comment| %>
-  <div>
-    <%= link_to comment.user.username, user_path(comment.user.id) %>
-    <%= simple_format comment.content %>
-    <%= comment.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
-    <% if comment.user_id == current_user.id %>
-    <%= link_to '提案文を削除', post_comment_path(@post.id), method: :delete, data: { confirm: "提案文を削除しますか？この操作は取り消せません。"}, class: "btn btn-danger btn-md" %>
-    <% end %>
-    <hr>
-  </div>
-<% end %>
-<% if @post.user_id != current_user.id %>
-<%= form_for [@post, @comment] do |f| %>
-<div class="form-group">
-    <%= f.label :提案文作成 %>
-    <%= f.text_area :content, rows: 6, autofocus: true, autocomplete: 'email', class: 'form-control' %>
-  </div>
-  <br>
-  <div class="form-group">
-    <%= f.submit '提案する', class: 'btn btn-primary btn-block' %>
-  </div>
-<% end %>
-<% end %>
+<%= render 'posts/comment' %>
+<%= render 'posts/comment_form' %>
 
 
 </div>
