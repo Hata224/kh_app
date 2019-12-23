@@ -1,15 +1,14 @@
 <div class="posts-index">
-<% @posts.each do |post| %>
-<%= link_to post do %>
-<div class="col-md-4">
-  <ul>
-
-    <li>投稿者名 : <%= post.user.username %></li>
-    <li>タイトル：<%= post.title %></li>
-    <li>投稿日：<%= post.created_at.strftime("%Y年%m月%d日") %></li>
-  </ul>
-  </div>
+  <% @posts.each do |post| %>
+    <%= link_to post do %>
+    <div class="col-md-4">
+      <ul>
+        <li>投稿者名 : <%= post.user.username %></li>
+        <li>タイトル：<%= post.title %></li>
+        <li>投稿日：<%= post.created_at.strftime("%Y年%m月%d日") %></li>
+      </ul>
+    </div>
+    <% end %>
   <% end %>
-<% end %>
-<%= paginate @posts %>
+  <%= paginate @posts %>
 </div>

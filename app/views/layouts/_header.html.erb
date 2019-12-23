@@ -1,25 +1,22 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top">
-<div class="container-fluid">
-  <a class="navbar-brand" href="/"><img src="/images/logo.jpg"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <ul class="navbar-nav ml-auto">
-      <% if user_signed_in? %>
-      <li class="nav-item"><strong><%= link_to current_user.username, pages_show_path, class:"nav-link" %></strong></li>
-      <li class="nav-item"><%= link_to  posts_path, class:"nav-link" do %><i class="far fa-newspaper"></i>案件一覧</li><% end %>
-       <li class="nav-item"><%= link_to  new_post_path, class:"nav-link" do %><i class="fas fa-paper-plane"></i>投稿する</li><% end %>
-         <li class="nav-item"><%= link_to  edit_user_registration_path, class:"nav-link" do %><i class="fas fa-user-edit i-user-edit"></i>ユーザー情報変更</li><% end %>
-                <li class="nav-item"><%= link_to destroy_user_session_path, class:"nav-link", method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト</li>
-                <% end %>
-                <% else %>
-                <li class="nav-item"><%= link_to new_user_registration_path, class:"nav-link" do %><i class="fas fa-user-plus"></i>新規登録</li>
-                <% end %>
-                <li class="nav-item"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to new_user_session_path do %><i class="fas fa-sign-in-alt"></i>ログイン</button></li>
-                <% end %>
-                <% end %>
-    </ul>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><img src="/images/logo.jpg"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item"><strong><%= link_to current_user.username, pages_show_path, class:"nav-link" %></strong></li>
+          <li class="nav-item"><%= link_to  posts_path, class:"nav-link" do %><i class="far fa-newspaper"></i>案件一覧</li><% end %>
+          <li class="nav-item"><%= link_to  new_post_path, class:"nav-link" do %><i class="fas fa-paper-plane"></i>投稿する</li><% end %>
+          <li class="nav-item"><%= link_to  edit_user_registration_path, class:"nav-link" do %><i class="fas fa-user-edit i-user-edit"></i>ユーザー情報変更</li><% end %>
+          <li class="nav-item"><%= link_to destroy_user_session_path, class:"nav-link", method: :delete do   %><i class="fas fa-sign-out-alt"></i>ログアウト</li><% end %>
+        <% else %>
+          <li class="nav-item"><%= link_to new_user_registration_path, class:"nav-link" do %><i class="fas fa-user-plus"></i>新規登録</li><% end %>
+          <li class="nav-item"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to new_user_session_path do %><i class="fas fa-sign-in-alt"></i>ログイン</button></li><% end %>
+        <% end %>
+      </ul>
+    </div>
   </div>
-  </div>
-  </nav>
+</nav>

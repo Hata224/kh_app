@@ -1,35 +1,35 @@
 <% provide(:title, "ホーム") %>
 <div class="top-container">
-    <h1>クラコピ</h1>
-    <p>ネーミングとキャッチコピーの募集と提案ができるサービス</p>
-     <div class="button-link">
+  <h1>クラコピ</h1>
+  <p>ネーミングとキャッチコピーの募集と提案ができるサービス</p>
+  <div class="button-link">
     <%= link_to '新規登録', new_user_registration_path, class:"btn btn-primary" %>
-    </div>
-    <div class="btn-link">
+  </div>
+  <div class="btn-link">
     <%= link_to 'かんたんログイン', users_guest_sign_in_path, class:"btn btn-warning", method: :post %>
-    </div>
-</div>
-<div class="jumbotron" id="about">
-<div class="container">
-  <h1 class="display-5 primary">クラコピとは</h1>
-  <p class="lead"></p>
-  <hr class="my-4">
-  <div class="button-jumbotron">
-  <p>クラコピはあらゆるモノのネーミングやキャッチコピーの募集と提案ができるサービスです。</p>
-  <h2>このようなお悩みを解決します<i class="far fa-lightbulb"></i></h2>
   </div>
+</div>
 
-  <ul class="jumbotron-list">
-  <li><i class="fas fa-check"></i>人の目にとまる広告を出したい</li>
-  <li><i class="fas fa-check"></i>商品の成約率をもっと上げたい</li>
-  <li><i class="fas fa-check"></i>Webサービスの名前を決めたい</li>
-  <li><i class="fas fa-check"></i>新しく立ち上げる会社名が決まらない</li>
-  <li><i class="fas fa-check"></i>サイトのファーストビューを改善したい</li>
-  <li><i class="fas fa-check"></i>YouYubeでバズりそうなタイトル案が欲しい</li>
-  </ul>
-  <p class="jumbotron-p">上記は一例です。様々なネーミング、キャッチコピーを決める際にご活用できますのでぜひ一度ご活用ください。</p>
-  <div class="btn-jumbotron">
-  <%= link_to 'さっそく使ってみる', new_user_registration_path, class:"btn btn-primary btn-lg" %>
+<div class="jumbotron" id="about">
+  <div class="container">
+    <h1 class="display-5 primary">クラコピとは</h1>
+    <p class="lead"></p>
+    <hr class="my-4">
+    <div class="button-jumbotron">
+      <p>クラコピはあらゆるモノのネーミングやキャッチコピーの募集と提案ができるサービスです。</p>
+      <h2>このようなお悩みを解決します<i class="far fa-lightbulb"></i></h2>
+    </div>
+    <ul class="jumbotron-list">
+      <li><i class="fas fa-check"></i>人の目にとまる広告を出したい</li>
+      <li><i class="fas fa-check"></i>商品の成約率をもっと上げたい</li>
+      <li><i class="fas fa-check"></i>Webサービスの名前を決めたい</li>
+      <li><i class="fas fa-check"></i>新しく立ち上げる会社名が決まらない</li>
+      <li><i class="fas fa-check"></i>サイトのファーストビューを改善したい</li>
+      <li><i class="fas fa-check"></i>YouYubeでバズりそうなタイトル案が欲しい</li>
+    </ul>
+    <p class="jumbotron-p">上記は一例です。様々なネーミング、キャッチコピーを決める際にご活用できますのでぜひ一度ご活用ください。</p>
+    <div class="btn-jumbotron">
+      <%= link_to 'さっそく使ってみる', new_user_registration_path, class:"btn btn-primary btn-lg" %>
+    </div>
   </div>
-</div>
 </div>
