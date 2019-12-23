@@ -1,7 +1,10 @@
 <h1><%= @user.username %></h1>
+
   <%= render 'follow_form' %>
   <%= render 'stats' %>
+
   <% if @user.avatar_id.present? %>
-<%= image_tag attachment_url(@user, :avatar, :fill, 350, 250, format: "jpg") %>
-<% end %>
-<%= render 'users/post_user' %>
+    <%= image_tag attachment_url(@user, :avatar, :fill, 350, 250, format: "jpg") %>
+  <% end %>
+
+　<%= render 'users/post_user' %>
