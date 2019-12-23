@@ -2,7 +2,6 @@
 
 class UsersController < ApplicationController
   def show
-    # @post = Post.find(params[:id])
     @user = User.find(params[:id])
   end
 
@@ -10,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = @user.followings
     render 'show_follow'
- end
+  end
 
   def followers
     @user  = User.find(params[:id])
