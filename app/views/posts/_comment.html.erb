@@ -1,5 +1,6 @@
 <h3>提案リスト一覧</h3>
 <hr>
+
 <% @comments.each do |comment| %>
   <div>
     <%= link_to comment.user.username, user_path(comment.user.id) %>
