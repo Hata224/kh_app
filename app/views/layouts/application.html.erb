@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://kit.fontawesome.com/ac8dfce5e3.js" crossorigin="anonymous"></script>
     <title><%= full_title(yield(:title)) %></title>
      <%= render 'layouts/rails_default' %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://kit.fontawesome.com/ac8dfce5e3.js" crossorigin="anonymous"></script>
+
   </head>
   <body>
-<%= render 'layouts/header' %>
-  <%= render 'layouts/flash_messages'%>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/flash_messages' %>
 
     <%= yield %>
 

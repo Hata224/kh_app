@@ -64,8 +64,6 @@ class PostsController < ApplicationController
   end
 
   def validate_user
-    if @post.user != current_user
-      redirect_to posts_path, alert: '投稿者以外はこの操作はできません'
-    end
+    redirect_to posts_path, alert: '投稿者以外はこの操作はできません' if @post.user != current_user
   end
 end
