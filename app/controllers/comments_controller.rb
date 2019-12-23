@@ -36,6 +36,5 @@ class CommentsController < ApplicationController
   def validate_user
     @post = Post.find(params[:post_id])
     @comment = Comment.find_by(post_id: params[:post_id])
-    redirect_to post_path(@post), alert: '投稿者はこの操作はできません' if @post.user_id == current_user.id
   end
 end
