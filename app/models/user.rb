@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable
 
-  validates :username, presence: true
+  validates :username, presence: true, length: { maximum: 50 }
   validates :profile, length: { maximum: 500 }
 
   has_many :posts, dependent: :destroy
