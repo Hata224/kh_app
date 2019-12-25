@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :comment do
     content { 'MyString' }
-    user { nil }
-    post { nil }
+    association :post
+    association :user
   end
 end
