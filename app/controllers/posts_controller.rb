@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   PER = 8
   def index
-    @posts = Post.page(params[:page]).per(PER)
+    @posts = Post.page(params[:page]).per(PER).order(created_at: :desc)
     @post = Post.find_by(params[:id])
     @user = User.find_by(id: @post.user_id)
   end
