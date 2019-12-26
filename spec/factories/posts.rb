@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :post do
-    title { 'MyString' }
-    body { 'MyText' }
+    title { 'test' }
+    body { 'Hello, world！' }
   end
 end

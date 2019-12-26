@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   PER = 8
   def index
-    @posts = Post.page(params[:page]).per(PER)
+    @posts = Post.page(params[:page]).per(PER).order(created_at: :desc)
     @post = Post.find_by(params[:id])
     @user = User.find_by(id: @post.user_id)
   end
@@ -30,10 +30,11 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path, notice: '投稿しました'
-    elsif @post.errors.any?
-      redirect_to new_post_path, alert: 'メッセージを入力してください'
+    elsif @post.title.empty?
+      redirect_to new_post_path, alert: 'タイトルを入力してください'
     else
-      render :new, alert: '投稿できませんでした'
+      flash[:alert] = 'タイトルは50字以内、詳細は1000字以内で入力してください'
+      render :new
     end
   end
 
