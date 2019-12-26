@@ -13,6 +13,10 @@ RSpec.describe Comment, type: :model do
       )
     end
 
+    it 'コメントが有効であること' do
+      expect(@comment).to be_valid
+    end
+
     it 'コメントが空欄であるなら無効であること' do
       @comment.content = nil
       @comment.valid?
