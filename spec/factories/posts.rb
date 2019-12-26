@@ -2,7 +2,16 @@
 
 FactoryBot.define do
   factory :post do
-    title { 'MyString' }
-    body { 'MyText' }
+    title { 'test' }
+    body { 'Hello, world！' }
+  end
+
+  trait :user do
+    transient do
+      username { 'sampleuser' }
+      email { 'member@example.com' }
+      password { '123456' }
+      password_confirmation { '123456' }
+    end
   end
 end
