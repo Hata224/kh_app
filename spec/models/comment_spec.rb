@@ -35,10 +35,5 @@ RSpec.describe Comment, type: :model do
       @comment.content = 'a' * 500
       expect(@comment).to be_valid
     end
-    # it 'コメントが500文字以内だと有効であること' do
-    #   @comment.content = 'a' * 500
-    #   @comment.valid?
-    #   expect(@comment).to be_valid
-    # end
   end
 end
