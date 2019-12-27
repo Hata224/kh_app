@@ -14,7 +14,7 @@ RSpec.describe 'ログインに関するテスト', type: :system do
     end
 
     it 'ユーザー詳細画面にリダイレクトされること' do
-      expect(current_path).to eq(pages_show_path)
+      expect(current_path).to eq(user_session_path)
     end
   end
 end
