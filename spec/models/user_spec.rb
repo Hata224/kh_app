@@ -58,7 +58,7 @@ RSpec.describe User, type: :model do
         expect(duplicate_user).to be_invalid
       end
 
-      it '登録時には、アドレスは小文字で登録されることを確認' do
+      it 'メールアドレス登録時に小文字に変換されること' do
         mixed_case_email = 'TesT@ExAMPle.CoM'
         @user.email = mixed_case_email
         @user.save
