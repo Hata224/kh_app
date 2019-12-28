@@ -41,6 +41,8 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       redirect_to posts_path, notice: '投稿内容を変更しました'
+    elsif @post.title.empty?
+      redirect_to edit_post_path, alert: 'タイトルを入力してください'
     else
       render :edit, alert: '投稿内容を変更できませんでした'
     end
