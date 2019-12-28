@@ -1,17 +1,17 @@
 <%= form_for post, local: true do |f|%>
 
   <div class="form-group">
-    <%= f.label :title, "タイトル（50字以内）" %>
+    <%= f.label :title, "タイトル" %>
     <%= f.text_field :title, autofocus: true, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :title, "依頼の詳細（1000字以内）" %>
+    <%= f.label :title, "依頼の詳細" %>
     <%= f.text_area :body, rows: 8, autofocus: true, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <i class="fas fa-camera"></i><%= f.label :title, "画像の挿入", class: "post-image-title" %><br>
+    <i class="fas fa-camera"></i><%= f.label :title, "画像", class: "post-image-title" %><br>
     <%= f.attachment_field :image, class: "post-image" %>
   </div>
 
