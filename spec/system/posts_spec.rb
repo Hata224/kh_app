@@ -13,45 +13,19 @@ describe '投稿のシステムテスト', type: :system do
 
     context '有効な入力をしたとき' do
       before { visit new_post_path }
-      it '投稿成功のメッセージが表示される' do
-        fill_in 'タイトル', with: 'test'
-        fill_in '依頼の詳細', with: 'test123'
-        attach_file '画像', ''
-        click_button '投稿する'
-        expect(page).to have_content('投稿しました')
-      end
+      # it '投稿成功のメッセージが表示される' do
+      #   fill_in post[title], with: 'test'
+      #   fill_in '依頼の詳細', with: 'test123'
+      #   attach_file '画像', ''
+      #   click_button '投稿する'
+      #   expect(page).to have_content('投稿しました')
+      # end
     end
     # context '無効な入力をしたとき' do
     #   before { visit new_post_path }
     #   it '投稿失敗のメッセージが表示されること' do
     #     click_button '投稿する'
     #     expect(page).to have_content('投稿に失敗しました')
-    #   end
-    # end
-  end
-
-  describe '投稿の編集と削除' do
-    let(:user) { create(:user) }
-    let(:test_post) { create(:post, user_id: user.id) }
-    before do
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: user.email
-      fill_in 'パスワード', with: user.password
-      click_button 'ログインする'
-      visit test_post.id
-    end
-    context '有効な入力をした場合' do
-      it '成功のメッセージが表示されること' do
-        fill_in 'タイトル', with: 'sample'
-        click_button '投稿内容を変更する'
-        expect(page).to have_content('投稿内容を変更しました')
-      end
-    end
-    # context '無効な入力した場合' do
-    #   it '失敗のメッセージが表示されること' do
-    #     fill_in '品名', with: nil
-    #     click_button '更新'
-    #     expect(page).to have_content('変更に失敗しました')
     #   end
     # end
   end

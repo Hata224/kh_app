@@ -7,11 +7,13 @@ RSpec.describe 'ユーザー登録についてのテスト', type: :system do
 
   describe '有効なユーザー登録である場合' do
     before do
-      fill_in 'ユーザー名', with: 'testuser'
-      fill_in 'メールアドレス', with: 'testtest@example.com'
-      fill_in 'パスワード', with: 'test12345'
-      fill_in '確認用パスワード', with: 'test12345'
-      click_button '新規登録'
+      expect do
+        fill_in 'ユーザー名', with: 'testuser'
+        fill_in 'メールアドレス', with: 'testtest@example.com'
+        fill_in 'パスワード', with: 'test12345'
+        fill_in '確認用パスワード', with: 'test12345'
+        click_button '新規登録'
+      end.to change(User, :count).by(1)
     end
 
     it 'ルートにリダイレクトされること' do
