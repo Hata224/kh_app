@@ -13,3 +13,41 @@
 .post-image-title {
   padding-left: 3px;
 }
+
+.post-item {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.post-list {
+  display: flex !important;
+}
+
+.user-img {
+  margin-right: 16px;
+  border: 2px solid lightgray;
+  border-radius: 30px;
+}
+
+.post-body {
+  color: black;
+}
+
+.post-menu {
+  display: flex;
+  color: gray;
+  font-size: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.post-title {
+  color: black;
+  font-weight: 300;
+}
+
+.post-user {
+  margin-right: 10px;
+  color: gray;
+}
