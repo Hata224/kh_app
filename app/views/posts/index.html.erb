@@ -2,6 +2,7 @@
 <div class="row">
 <div class="posts-index">
   <% @posts.each do |post| %>
+
     <%= link_to post do %>
     <div class="col-lg-3 post-item post-list">
     <% if post.user.avatar_id.present? %>
@@ -17,7 +18,17 @@
       <div class="post-menu">
         <%= link_to @user.username, user_path(@user.id), class:'post-user' %>
         <%= post.created_at.strftime("%Y年%m月%d日") %>
+         <% if current_user.already_favorited?(post) %>
+
+    <span class="fa fa-heart like-btn-unlike"></span>
+  <% else %>
+
+    <span class="far fa-heart like-btn"></span>
+    <% end %>
+  <%= post.favorites.count %>
+
         </div>
+
         </div>
     </div>
 

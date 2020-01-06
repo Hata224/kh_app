@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   get 'pages/show'
-  get 'posts/index', to: 'posts#index'
+
   resources :users, only: [:show] do
     member do
       get :following, :followers
