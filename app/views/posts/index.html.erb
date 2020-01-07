@@ -15,7 +15,7 @@
          </div>
          <% end %>
          <div class="post-menu">
-           <%= link_to @user.username, user_path(@user.id), class:'post-user' %>
+           <%= link_to post.user.username, user_path(post.user.id), class:'post-user' %>
            <%= post.created_at.strftime("%Y年%m月%d日") %>
            <% if current_user.already_favorited?(post) %>
            <span class="fa fa-heart like-btn-unlike"></span>

@@ -1,16 +1,17 @@
 <div class="container">
-
   <div class="col-md-12">
-    <h2><%= link_to @user.username, user_path(@user.id) %></h2>
-    <% if @post.image_id.present? %>
-      <%= image_tag attachment_url(@post, :image, :fill, 350, 250, format: "jpg") %>
-    <% end %>
-    <h1><%= @post.title %></h1>
-    <p><%= simple_format @post.body %></p>
-    <p class="text-right">
+    <div class="post-show">
+      <h1><%= @post.title %></h1>
+      <h2><%= link_to @user.username, user_path(@user.id) %></h2>
+      <% if @post.image_id.present? %>
+        <%= image_tag attachment_url(@post, :image, :fill, 350, 250, format: "jpg") %>
+      <% end %>
+      <p><%= simple_format @post.body %></p>
+      <p class="text-right">
       <%= @post.created_at.strftime("%Y年%m月%d日") %>
-    </p>
-    <%= render 'posts/like' %>
+      </p>
+      <%= render 'posts/like' %>
+    </div>
   </div>
 
   <% if @post.user_id == current_user.id %>
