@@ -14,10 +14,14 @@
   padding-left: 3px;
 }
 
+.post-item-box {
+  box-shadow: 2px 2px 4px gray;
+}
 .post-item {
   border-bottom: 1px solid #e8e8e8;
-  padding: 15px;
+  padding: 25px;
   box-sizing: border-box;
+  max-width: 700px;
 }
 
 .post-list {
@@ -45,6 +49,7 @@
 .post-title {
   color: black;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .post-user {
@@ -54,8 +59,27 @@
 
 .like-btn-unlike {
   color: #f84f50;
+  margin-left: 5px;
 }
 
 .like-btn {
   color: #f84f50;
+  margin-left: 5px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 15px 0;
+  background-color: #fff;
+}
+
+.posts-index {
+  background-color: #f1f3f4;
+  padding: 50px 0;
+}
+
+.post-item-box {
+  box-shadow: 0 3px 6px lightgray;
+  margin: 0 -10px;
 }

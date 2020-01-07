@@ -6,6 +6,6 @@ class Post < ApplicationRecord
   validates :body, length: { maximum: 1000 }
   attachment :image
   has_many :comments, dependent: :destroy
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :favorited_users, through: :favorites, source: :user
 end

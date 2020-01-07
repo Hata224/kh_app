@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :create]
+  before_action :authenticate_user!, only: %i[show create]
   before_action :find_post, only: %i[show edit update destroy]
   before_action :validate_user, only: %i[edit update destroy]
 
-  PER = 8
+  PER = 10
   def index
     @favorite = Favorite.new
     @posts = Post.page(params[:page]).per(PER).order(created_at: :desc)
