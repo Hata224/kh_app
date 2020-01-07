@@ -1,26 +1,37 @@
-<div class="container">
-  <div class="col-md-12">
-    <div class="post-show">
-      <h1><%= @post.title %></h1>
-      <h2><%= link_to @user.username, user_path(@user.id) %></h2>
+<div class="posts-index">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="post-show-user">
+      <% if @post.user.avatar_id.present? %>
+        <%= image_tag attachment_url(@user, :avatar, :fill, 50, 50, format: "jpg"), class: 'user-img' %>
+        <% else %>
+        <%= image_tag('/images/default.jpeg', size: '50x50', class: 'user-img') %>
+        <% end %>
+        <div class="post-username">
+          <%= link_to @user.username, user_path(@user.id) %>
+          <div class="post-time">
+            <%= @post.created_at.strftime("%Y年%m月%d日") %>
+          </div>
+        </div>
+      </div>
+      <div class="post-show-title">
+      <h2><%= @post.title %></h2>
+      </div>
       <% if @post.image_id.present? %>
         <%= image_tag attachment_url(@post, :image, :fill, 350, 250, format: "jpg") %>
       <% end %>
       <p><%= simple_format @post.body %></p>
       <p class="text-right">
-      <%= @post.created_at.strftime("%Y年%m月%d日") %>
       </p>
       <%= render 'posts/like' %>
     </div>
-  </div>
 
   <% if @post.user_id == current_user.id %>
     <%= link_to '投稿を編集', edit_post_path(@post), class: "btn btn-success btn-md" %>
     <%= link_to '投稿を削除', post_path(@post.id), method: :delete, data: { confirm: "投稿を削除しますか？この操作は取り消せません。"}, class: "btn btn-danger btn-md" %>
   <% end %>
-
-  <hr>
-
+   <hr>
     <%= render 'posts/comment' %>
     <%= render 'posts/comment_form' %>
+  </div>
 </div>

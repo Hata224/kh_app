@@ -17,6 +17,7 @@
 .post-item-box {
   box-shadow: 2px 2px 4px gray;
 }
+
 .post-item {
   border-bottom: 1px solid #e8e8e8;
   padding: 25px;
@@ -90,6 +91,19 @@
   margin-top: 15px;
 }
 
-.post-show {
-  padding: 20px;
+.post-show-user {
+  padding: 20px 20px 20px 0;
+  display: flex;
+  .post-username {
+    padding-top: 15px;
+    display: flex;
+    .post-time {
+      padding-left: 10px;
+    }
+  }
+}
+
+.post-show-title h2 {
+  font-size: 32px;
+  font-weight: 700;
 }
