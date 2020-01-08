@@ -128,10 +128,27 @@ h3:after {
 
 .post-change {
   display: block;
-  float: right;
+  text-align: right;
   padding: 10px;
 }
 
 .comment-list {
+  padding: 10px 0;
+}
+
+.comment-form {
+  padding: 0 15px 15px 15px;
+}
+
+.new-post {
+  padding: 20px 0;
+}
+
+.fa-edit {
   padding-top: 20px;
+}
+
+.post-img {
+  max-width: 50%;
+  margin: auto;
 }
