@@ -5,7 +5,7 @@
       <%= link_to post do %>
       <div class="post-item post-list">
         <% if post.user.avatar_id.present? %>
-        <%= image_tag attachment_url(@user, :avatar, :fill, 50, 50, format: "jpg"), class: 'user-img' %>
+        <%= image_tag attachment_url(post.user, :avatar, :fill, 50, 50, format: "jpg"), class: 'user-img' %>
         <% else %>
         <%= image_tag('/images/default.jpeg', size: '50x50', class: 'user-img') %>
         <% end %>
