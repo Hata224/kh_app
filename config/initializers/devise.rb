@@ -304,5 +304,5 @@ Devise.setup do |config|
   config.unlock_in = 30.minutes
 
   # タイムアウト設定
-  config.timeout_in = 3.minutes
+  config.timeout_in = 1.hour
 end

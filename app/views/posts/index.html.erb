@@ -5,7 +5,7 @@
       <%= link_to post do %>
       <div class="post-item post-list">
         <% if post.user.avatar_id.present? %>
-        <%= image_tag attachment_url(@user, :avatar, :fill, 50, 50, format: "jpg"), class: 'user-img' %>
+        <%= image_tag attachment_url(post.user, :avatar, :fill, 50, 50, format: "jpg"), class: 'user-img' %>
         <% else %>
         <%= image_tag('/images/default.jpeg', size: '50x50', class: 'user-img') %>
         <% end %>
@@ -15,14 +15,16 @@
          </div>
          <% end %>
          <div class="post-menu">
-           <%= link_to @user.username, user_path(@user.id), class:'post-user' %>
+           <%= link_to post.user.username, user_path(post.user.id), class:'post-user' %>
            <%= post.created_at.strftime("%Y年%m月%d日") %>
            <% if current_user.already_favorited?(post) %>
-           <span class="fa fa-heart like-btn-unlike"></span>
+           <span class="fas fa-thumbs-up like-btn-unlike"></span>
            <% else %>
-           <span class="far fa-heart like-btn"></span>
+           <span class="far fa-thumbs-up like-btn"></span>
            <% end %>
            <%= post.favorites.count %>
+           <span class="far fa-comment comment-btn"></span>
+           <%= post.comments.count %>
          </div>
         </div>
       </div>

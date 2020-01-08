@@ -30,12 +30,6 @@ RSpec.describe Post, type: :model do
       expect(@post.errors).to be_added(:title, :too_long, count: 50)
     end
 
-    it '本文が空欄でも有効であること' do
-      @post.body = nil
-      @post.valid?
-      expect(@post).to be_valid
-    end
-
     it '本文が1000文字以内だと有効であること' do
       @post.body = 'a' * 1000
       expect(@post).to be_valid

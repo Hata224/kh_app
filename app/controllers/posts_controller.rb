@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   PER = 10
   def index
+    @all_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(1000).pluck(:post_id))
     @favorite = Favorite.new
     @posts = Post.page(params[:page]).per(PER).order(created_at: :desc)
     @post = Post.find_by(params[:id])
