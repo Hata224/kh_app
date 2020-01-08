@@ -1,9 +1,9 @@
-  <% if current_user.already_favorited?(@post) %>
+<% if current_user.already_favorited?(@post) %>
     <%= link_to post_favorite_path(@post), method: :delete do %>
-    <span class="fa fa-heart like-btn-unlike"></span>
+    <span class="fas fa-thumbs-up like-btn-unlike"></span>
     <% end %>
   <% else %>
-    <%= link_to post_favorites_path(@post), method: :post do %><span class="far fa-heart like-btn"></span>
+    <%= link_to post_favorites_path(@post), method: :post do %><span class="far fa-thumbs-up like-btn"></span>
     <% end %>
   <% end %>
   <%= @post.favorites.count %>

@@ -12,24 +12,24 @@
           <div class="post-time">
             <%= @post.created_at.strftime("%Y年%m月%d日") %>
           </div>
+          <%= render 'posts/like' %>
         </div>
       </div>
       <div class="post-show-title">
       <h2><%= @post.title %></h2>
       </div>
+      <h3>案件の詳細</h3>
       <% if @post.image_id.present? %>
         <%= image_tag attachment_url(@post, :image, :fill, 350, 250, format: "jpg") %>
       <% end %>
       <p><%= simple_format @post.body %></p>
-      <p class="text-right">
-      </p>
-      <%= render 'posts/like' %>
+      <% if @post.user_id == current_user.id %>
+  <div class="post-change">
+    <%= link_to '案件を編集', edit_post_path(@post), class: "btn btn-success btn-md" %>
+    <%= link_to '案件を削除', post_path(@post.id), method: :delete, data: { confirm: "投稿を削除しますか？この操作は取り消せません。"}, class: "btn btn-danger btn-md" %>
     </div>
-
-  <% if @post.user_id == current_user.id %>
-    <%= link_to '投稿を編集', edit_post_path(@post), class: "btn btn-success btn-md" %>
-    <%= link_to '投稿を削除', post_path(@post.id), method: :delete, data: { confirm: "投稿を削除しますか？この操作は取り消せません。"}, class: "btn btn-danger btn-md" %>
   <% end %>
+    </div>
    <hr>
     <%= render 'posts/comment' %>
     <%= render 'posts/comment_form' %>
