@@ -151,4 +151,31 @@ h3:after {
 .post-img {
   max-width: 50%;
   margin: auto;
+  padding-top: 16px;
+}
+
+.comment-btn {
+  color: black;
+  margin-left: 5px;
+}
+
+.comment-content {
+  padding: 0 16px 16px 16px;
+}
+
+.comment-time {
+  color: gray;
+  text-align: right;
+}
+
+.comment-btn {
+  display: block;
+  float: right;
+  margin: 5px;
+}
+
+.post-body {
+  p {
+    padding: 0 16px 4px 16px;
+  }
 }

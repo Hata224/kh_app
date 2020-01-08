@@ -25,14 +25,15 @@
           <%= image_tag attachment_url(@post, :image, :fill, 350, 250, format: "jpg") %>
           </div>
         <% end %>
+        <div class="post-body">
         <p><%= simple_format @post.body %></p>
+        </div>
         <% if @post.user_id == current_user.id %>
         <div class="post-change">
           <%= link_to '案件を編集', edit_post_path(@post), class: "btn btn-success btn-md" %>
           <%= link_to '案件を削除', post_path(@post.id), method: :delete, data: { confirm: "投稿を削除しますか？この操作は取り消せません。"}, class: "btn btn-danger btn-md" %>
         <% end %>
         </div>
-        <hr>
           <div class="comment-form">
             <%= render 'posts/comment' %>
             <%= render 'posts/comment_form' %>

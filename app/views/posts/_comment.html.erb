@@ -1,13 +1,25 @@
 
 <div class="comment-list">
-<h3>提案リスト</h3>
+<h3>提案リスト【提案数：<%= @post.comments.count %>】</h3>
 <% @comments.each do |comment| %>
-    <%= link_to comment.user.username, user_path(comment.user.id) %>
-    <%= simple_format comment.content %>
-    <%= comment.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
-    <% if comment.user_id == current_user.id %>
-      <%= link_to '提案文を削除', post_comment_path(@post.id), method: :delete, data: { confirm: "提案文を削除しますか？この操作は取り消せません。"}, class: "btn btn-danger btn-md" %>
+     <% if @comment.user.avatar_id.present? %>
+            <%= image_tag attachment_url(@user, :avatar, :fill, 50, 50, format: "jpg"), class: 'user-img' %>
+          <% else %>
+            <%= image_tag('/images/default.jpeg', size: '50x50', class: 'user-img') %>
+          <% end %>
+          <%= link_to comment.user.username, user_path(comment.user.id) %>
+          <% if comment.user_id == current_user.id %>
+          <div class="comment-btn">
+      <%= link_to '削除', post_comment_path(@post.id), method: :delete, data: { confirm: "提案文を削除しますか？この操作は取り消せません。"}, class: "btn btn-danger btn-md" %>
+      </div>
     <% end %>
-    <hr>
+          <hr>
+          <div class="comment-content">
+    <%= simple_format comment.content %>
+    </div>
+    <div class="comment-time">
+    <%= comment.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+</div>
+    <hr color="black">
 <% end %>
 </div>
