@@ -20,7 +20,7 @@
 
 .post-item {
   border-bottom: 1px solid #e8e8e8;
-  padding: 25px;
+  padding: 16px;
   box-sizing: border-box;
   max-width: 700px;
 }
@@ -32,17 +32,18 @@
 .user-img {
   margin-right: 16px;
   border: 2px solid lightgray;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 
 .post-body {
   color: black;
+  padding-top: 8px;
 }
 
 .post-menu {
   display: flex;
   color: gray;
-  font-size: 14px;
+  font-size: 16px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -50,7 +51,8 @@
 .post-title {
   color: black;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
+  font-size: 20px;
 }
 
 .post-user {
@@ -95,7 +97,7 @@
   padding: 20px 20px 20px 0;
   display: flex;
   .post-username {
-    padding-top: 15px;
+    padding-top: 24px;
     display: flex;
     .post-time {
       padding-left: 10px;
@@ -169,7 +171,6 @@ h3:after {
 }
 
 .comment-btn {
-  display: block;
   float: right;
   margin: 5px;
 }
@@ -178,4 +179,8 @@ h3:after {
   p {
     padding: 0 16px;
   }
+}
+
+.post-tag {
+  padding: 0 10px;
 }

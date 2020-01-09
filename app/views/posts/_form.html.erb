@@ -1,4 +1,4 @@
-<%= form_for post, local: true do |f|%>
+<%= form_for post, local: true do |f| %>
 
   <div class="form-group">
     <%= f.label :title, "タイトル" %>
@@ -8,6 +8,11 @@
   <div class="form-group">
     <%= f.label :title, "依頼の詳細" %>
     <%= f.text_area :body, rows: 8, autofocus: true, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :tag_list, "タグ（カンマ区切り）" %>
+    <%= f.text_field :tag_list, value: @post.tag_list.join(','), class: "form-control" %>
   </div>
 
   <div class="form-group">

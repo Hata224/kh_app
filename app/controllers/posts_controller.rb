@@ -65,7 +65,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :image, :content)
+    params.require(:post).permit(:title, :body, :image, :content, :tag_list)
   end
 
   def validate_user

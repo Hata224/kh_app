@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'pages/show'
 
-  resources :users, only: [:show] do
+  resources :users, only: %i[index show] do
     member do
       get :following, :followers
     end
