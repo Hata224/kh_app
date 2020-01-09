@@ -2,7 +2,7 @@
 <div class="comment-list">
 <h3>提案リスト【提案数：<%= @post.comments.count %>】</h3>
 <% @comments.each do |comment| %>
-     <% if comment.user.avatar_id.present? %>
+          <% if comment.user.avatar_id.present? %>
             <%= image_tag attachment_url(comment.user, :avatar, :fill, 50, 50, format: "jpg"), class: 'user-img' %>
           <% else %>
             <%= image_tag('/images/default.jpeg', size: '50x50', class: 'user-img') %>

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class DropTableRelationship < ActiveRecord::Migration[5.2]
-  def change
+  def down
     drop_table :relationships
   end
 end
