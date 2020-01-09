@@ -20,7 +20,7 @@
 
 .post-item {
   border-bottom: 1px solid #e8e8e8;
-  padding: 25px;
+  padding: 16px;
   box-sizing: border-box;
   max-width: 700px;
 }
@@ -32,7 +32,7 @@
 .user-img {
   margin-right: 16px;
   border: 2px solid lightgray;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 
 .post-body {
@@ -169,7 +169,6 @@ h3:after {
 }
 
 .comment-btn {
-  display: block;
   float: right;
   margin: 5px;
 }
