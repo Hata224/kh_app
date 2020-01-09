@@ -37,7 +37,6 @@
 
 .post-body {
   color: black;
-  padding-top: 8px;
 }
 
 .post-menu {
@@ -162,7 +161,8 @@ h3:after {
 }
 
 .comment-content {
-  padding: 0 16px 16px 16px;
+  padding: 4px 16px 4px 24px;
+  font-size: large;
 }
 
 .comment-time {
@@ -172,6 +172,7 @@ h3:after {
 
 .comment-btn {
   float: right;
+  padding: 8px;
   margin: 5px;
 }
 
