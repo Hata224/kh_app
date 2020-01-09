@@ -9,10 +9,4 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorited_users, through: :favorites, source: :user
-
-  private
-
-  def task_params
-    params.require(:user).permit(:name, :description, :tag_list)
-  end
 end
