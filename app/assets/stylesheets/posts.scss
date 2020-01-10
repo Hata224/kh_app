@@ -110,7 +110,7 @@
 }
 
 h3 {
-  color: #14128e;
+  color: #35477d;
   padding-top: 15px;
   font-size: 24px;
   font-weight: 500;
@@ -122,7 +122,7 @@ h3:after {
   position: absolute;
   content: " ";
   display: block;
-  border-bottom: solid 3px #003cbe;
+  border-bottom: solid 3px #35477d;
   bottom: -3px;
   width: 20%;
 }
@@ -172,8 +172,8 @@ h3:after {
 
 .comment-btn {
   float: right;
-  padding: 8px;
-  margin: 5px;
+  padding: 8px 0 8px 8px;
+  margin: 5px 2px 5px 5px;
 }
 
 .post-body {
@@ -184,4 +184,12 @@ h3:after {
 
 .post-tag {
   padding: 0 10px;
+}
+
+.badge-primary {
+  background-color: #ffc952;
+}
+
+a {
+  color: black;
 }
