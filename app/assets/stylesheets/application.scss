@@ -51,7 +51,9 @@ body {
 nav {
   width: 100%;
   background-color: #fff;
-  border-bottom: solid 1px gray;
+  a {
+    color: white;
+  }
 }
 
 .top-container {
@@ -139,7 +141,7 @@ a.navbar-brand img {
   background-color: #fff;
   margin-bottom: -32px;
   h1 {
-    color: #008cef;
+    color: #35477d;
     text-align: center;
     font-weight: bold;
   }
@@ -184,7 +186,7 @@ a.navbar-brand img {
 }
 
 .fa-check {
-  color: #668ad8;
+  color: #47b8e0;
   margin-right: 18px;
   text-align: center;
 }
@@ -207,4 +209,36 @@ a.navbar-brand img {
 .fa-user,
 .fa-users {
   padding-right: 2px;
+}
+
+.btn-primary {
+  background-color: #35477d;
+  border-color: #35477d;
+}
+
+.btn-warning {
+  background-color: #ffc952;
+}
+
+.btn-outline-primary {
+  border-color: #35477d;
+}
+
+.btn-danger {
+  background-color: #ff7473;
+  border-color: #ff7473;
+}
+
+.btn-info {
+  background-color: #47b8e0;
+  border-color: #47b8e0;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.user-image {
+  border: 2px solid lightgray;
+  border-radius: 150px;
 }
