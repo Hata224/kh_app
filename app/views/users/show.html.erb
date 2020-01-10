@@ -1,10 +1,18 @@
+<% if @user.avatar_id.present? %>
+   <div class="user-photo">
+  <%= image_tag attachment_url(@user, :avatar, :fill, 200, 200, format: "jpg"), class: 'user-image' %>
+  </div>
+  <% end %>
+  <div class="username-show">
 <h1><%= @user.username %></h1>
+</div>
+
+<div class="profile-show">
+<%= @user.profile %>
+</div>
+<hr>
 
   <%= render 'follow_form' %>
   <%= render 'stats' %>
-
-  <% if @user.avatar_id.present? %>
-    <%= image_tag attachment_url(@user, :avatar, :fill, 350, 250, format: "jpg") %>
-  <% end %>
 
 　<%= render 'users/post_user' %>

@@ -1,6 +1,6 @@
 
 <div class="comment-list">
-<h3>提案リスト【提案数：<%= @post.comments.count %>】</h3>
+<h3>提案リスト<i class="far fa-comment" style="padding: 0 2px 0 5px;"></i><%= @post.comments.count %></h3>
 <% @comments.each do |comment| %>
           <% if comment.user.avatar_id.present? %>
             <%= image_tag attachment_url(comment.user, :avatar, :fill, 50, 50, format: "jpg"), class: 'user-img' %>
@@ -13,6 +13,7 @@
       <%= link_to '削除', post_comment_path(@post.id), method: :delete, data: { confirm: "提案文を削除しますか？この操作は取り消せません。"}, class: "btn btn-danger btn-md" %>
       </div>
     <% end %>
+    <hr style="margin-top: 4px;">
           <div class="comment-content">
     <%= simple_format comment.content %>
     </div>
