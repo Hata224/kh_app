@@ -1,0 +1,115 @@
+<div class="user-nav col-md-12">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item nav-link-user">
+     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">投稿一覧</a>
+    </li>
+    <li class="nav-item nav-link-user">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">いいね一覧</a>
+     </li>
+     <li class="nav-item nav-link-user">
+       <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><%= @user.followings.count %>フォロー</a>
+     </li>
+     <li class="nav-item nav-link-user">
+       <a class="nav-link" id="follower-tab" data-toggle="tab" href="#follower" role="tab" aria-controls="follower" aria-selected="false"><%= @user.followers.count %>フォロワー</a>
+     </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <% @user.posts.each do |post| %>
+        <%= link_to post do %>
+        <div class="post-item post-list">
+          <% if post.user.avatar_id.present? %>
+            <%= image_tag attachment_url(post.user, :avatar, :fill, 50, 50, format: "jpg"), class: 'user-img' %>
+          <% else %>
+            <%= image_tag('/images/default.jpeg', size: '50x50', class: 'user-img') %>
+          <% end %>
+          <div class="post-body">
+            <div class="post-title">
+              <%= post.title %>
+            </div>
+        <% end %>
+        <div class="post-menu">
+          <%= link_to post.user.username, user_path(post.user.id), class:'post-user' %>
+          <%= post.created_at.strftime("%Y年%m月%d日") %>
+          <% if current_user.already_favorited?(post) %>
+            <span class="fas fa-thumbs-up like-btn-unlike"></span>
+          <% else %>
+            <span class="far fa-thumbs-up like-btn"></span>
+          <% end %>
+          <%= post.favorites.count %>
+          <span class="far fa-comment comment-btn"></span>
+          <%= post.comments.count %>
+          <div class="post-tag">
+            <%= render 'posts/tag_list', tag_list: post.tag_list %>
+          </div>
+         </div>
+        </div>
+      </div>
+      <% end %>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><% @user.favorites.each do |favorite| %>
+        <% post = Post.find_by(id: favorite.post_id) %>
+        <%= link_to post do %>
+        <div class="post-item post-list">
+          <% if post.user.avatar_id.present? %>
+            <%= image_tag attachment_url(post.user, :avatar, :fill, 50, 50, format: "jpg"), class: 'user-img' %>
+          <% else %>
+            <%= image_tag('/images/default.jpeg', size: '50x50', class: 'user-img') %>
+          <% end %>
+          <div class="post-body">
+            <div class="post-title">
+              <%= post.title %>
+            </div>
+            <% end %>
+            <div class="post-menu">
+              <%= link_to post.user.username, user_path(post.user.id), class:'post-user' %>
+              <%= post.created_at.strftime("%Y年%m月%d日") %>
+              <% if current_user.already_favorited?(post) %>
+                <span class="fas fa-thumbs-up like-btn-unlike"></span>
+              <% else %>
+                <span class="far fa-thumbs-up like-btn"></span>
+              <% end %>
+                <%= post.favorites.count %>
+              <span class="far fa-comment comment-btn"></span>
+              <%= post.comments.count %>
+              <div class="post-tag">
+                <%= render 'posts/tag_list', tag_list: post.tag_list %>
+              </div>
+            </div>
+            </div>
+           </div>
+        <% end %>
+       </div>
+       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+         <% @user.followings.each do |user| %>
+           <div class="user-item user-list">
+             <% if user.avatar_id.present? %>
+               <%= image_tag attachment_url(user, :avatar, :fill, 70, 70, format: "jpg"), class: 'user-img' %>
+             <% else %>
+               <%= image_tag('/images/default.jpeg', size: '70x70', class: 'user-img') %>
+             <% end %>
+              <div class="user-menu">
+                <p><%= link_to user.username, user_path(user.id), class:'user-name' %></p>
+                <p class="user-profile"><%= user.profile %></p>
+              </div>
+             </div>
+          <% end %>
+         </div>
+         <div class="tab-pane fade" id="follower" role="tabpanel" aria-labelledby="follower-tab">
+           <% @user.followers.each do |user| %>
+           <div class="user-item user-list">
+             <% if user.avatar_id.present? %>
+               <%= image_tag attachment_url(user, :avatar, :fill, 70, 70, format: "jpg"), class: 'user-img' %>
+             <% else %>
+               <%= image_tag('/images/default.jpeg', size: '70x70', class: 'user-img') %>
+             <% end %>
+             <div class="user-menu">
+               <p><%= link_to user.username, user_path(user.id), class:'user-name' %></p>
+               <p class="user-profile"><%= user.profile %></p>
+              </div>
+            </div>
+           <% end %>
+          </div>
+       </div>
+    </div>
+ </div>

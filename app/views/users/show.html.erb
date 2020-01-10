@@ -1,10 +1,25 @@
-<h1><%= @user.username %></h1>
+<div class="posts-index">
+  <div class="container">
+    <div class="post-item-box">
+      <% if @user.avatar_id.present? %>
+      <div class="user-photo">
+        <%= image_tag attachment_url(@user, :avatar, :fill, 200, 200, format: "jpg"), class: 'user-image' %>
+     </div>
+     <% else %>
+     <div class="user-photo">
+        <%= image_tag('/images/default.jpeg', size: '200x200', class: 'user-image') %>
+     </div>
+     <% end %>
+     <div class="username-show">
+      <h1><%= @user.username %></h1>
+     </div>
 
-  <%= render 'follow_form' %>
-  <%= render 'stats' %>
+     <%= render 'follow_form' %>
 
-  <% if @user.avatar_id.present? %>
-    <%= image_tag attachment_url(@user, :avatar, :fill, 350, 250, format: "jpg") %>
-  <% end %>
-
-　<%= render 'users/post_user' %>
+     <div class="profile-show">
+       <%= @user.profile %>
+     </div>
+     <%= render 'nav' %>
+    </div>
+  </div>
+</div>

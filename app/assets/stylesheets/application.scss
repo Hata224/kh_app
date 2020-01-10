@@ -234,6 +234,11 @@ a.navbar-brand img {
   border-color: #47b8e0;
 }
 
+.btn-link .btn {
+  background-color: #ffc952;
+  border-color: #ffc952;
+}
+
 .navbar-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
@@ -241,4 +246,55 @@ a.navbar-brand img {
 .user-image {
   border: 2px solid lightgray;
   border-radius: 150px;
+}
+
+.user-photo {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 24px;
+}
+
+.username-show {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  padding-top: 8px;
+}
+
+.profile-show {
+  padding: 8px 4px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.user-nav {
+  padding-top: 8px;
+  margin: auto;
+  max-width: 650px;
+}
+
+.nav-tabs .nav-link.disabled {
+  width: 100%;
+}
+
+.nav-link-user {
+  margin: 0 auto;
+}
+
+.btn-update {
+  margin-bottom: 8px;
+}
+
+.follow-user {
+  text-align: center;
+}
+
+.follow-count {
+  text-align: center;
+  padding: 16px;
+}
+
+.follow-btn {
+  border: 2px solid #35477d;
 }

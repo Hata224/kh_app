@@ -1,21 +1,23 @@
-<h1>こんにちは、<%= current_user.username %>さん</h1>
-<p>ユーザー用ページです。</p>
-<% if current_user.avatar_id.present? %>
-  <%= image_tag attachment_url(current_user, :avatar, :fill, 200, 200, format: "jpg"), class: 'user-image' %>
-<% end %>
-
-<p>プロフィール</p>
-<%= current_user.profile %>
-<hr>
-<p>投稿一覧</p>
-
-<% current_user.posts.each do |post| %>
-  <%= link_to post do %>
-    <div class="col-md-4">
-      <ul>
-        <li>タイトル：<%= post.title %></li>
-        <li>投稿日：<%= post.created_at.strftime("%Y年%m月%d日") %></li>
-      </ul>
-    </div>
-  <% end %>
-<% end %>
+<div class="posts-index">
+  <div class="container">
+    <div class="post-item-box">
+      <% if current_user.avatar_id.present? %>
+        <div class="user-photo">
+          <%= image_tag attachment_url(current_user, :avatar, :fill, 200, 200, format: "jpg"), class: 'user-image' %>
+        </div>
+      <% else %>
+        <div class="user-photo">
+          <%= image_tag('/images/default.jpeg', size: '200x200', class: 'user-image') %>
+        </div>
+      <% end %>
+      <div class="username-show">
+        <h1><%= current_user.username %></h1>
+        <%= link_to 'ユーザー情報編集', edit_user_registration_path, class: "btn btn-info btn-md" %>
+      </div>
+      <div class="profile-show">
+        <%= current_user.profile %>
+      </div>
+      <%= render 'nav' %>
+     </div>
+   </div>
+</div>
