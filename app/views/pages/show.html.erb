@@ -102,23 +102,35 @@
       </div>
         <% end %>
 </div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><% current_user.followings.each do |user| %>
-<table>
-<tr>
-  <td>  <%= user.username %> </td>
-  <td><%= link_to '詳細', user_path(user) %></td>
-</tr>
-</table>
-<% end %>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+  <% current_user.followings.each do |user| %>
+        <div class="user-item user-list">
+          <% if user.avatar_id.present? %>
+            <%= image_tag attachment_url(user, :avatar, :fill, 70, 70, format: "jpg"), class: 'user-img' %>
+          <% else %>
+            <%= image_tag('/images/default.jpeg', size: '70x70', class: 'user-img') %>
+          <% end %>
+          <div class="user-menu">
+             <p><%= link_to user.username, user_path(user.id), class:'user-name' %></p>
+             <p class="user-profile"><%= user.profile %></p>
+          </div>
+        </div>
+      <% end %>
   </div>
-   <div class="tab-pane fade" id="follower" role="tabpanel" aria-labelledby="follower-tab"><% current_user.followers.each do |user| %>
-<table>
-<tr>
-  <td>  <%= user.username %> </td>
-  <td><%= link_to '詳細', user_path(user) %></td>
-</tr>
-</table>
-<% end %>
+   <div class="tab-pane fade" id="follower" role="tabpanel" aria-labelledby="follower-tab">
+   <% current_user.followers.each do |user| %>
+        <div class="user-item user-list">
+          <% if user.avatar_id.present? %>
+            <%= image_tag attachment_url(user, :avatar, :fill, 70, 70, format: "jpg"), class: 'user-img' %>
+          <% else %>
+            <%= image_tag('/images/default.jpeg', size: '70x70', class: 'user-img') %>
+          <% end %>
+          <div class="user-menu">
+             <p><%= link_to user.username, user_path(user.id), class:'user-name' %></p>
+             <p class="user-profile"><%= user.profile %></p>
+          </div>
+        </div>
+      <% end %>
 </div>
 </div>
 </div>
