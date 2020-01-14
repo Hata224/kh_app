@@ -38,6 +38,9 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
 gem 'bootstrap', '~> 4.1.1'
 gem 'carrierwave'
 gem 'devise'
