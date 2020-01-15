@@ -42,13 +42,11 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 gem 'bootstrap', '~> 4.1.1'
-gem 'carrierwave'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'dotenv-rails'
-gem 'fog-aws'
 gem 'jquery-rails'
 gem 'kaminari', '~> 0.17.0'
 gem 'kaminari-bootstrap', '~> 3.0.1'
