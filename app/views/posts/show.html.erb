@@ -22,7 +22,7 @@
         <h3>案件の詳細</h3>
         <% if @post.image_id.present? %>
         <div class="post-img">
-          <%= image_tag attachment_url(@post, :image, :fill, 350, 250, format: "jpg") %>
+          <%= image_tag attachment_url(@post, :image, :fill, 350, 250, format: "jpg"), class: 'post-photo' %>
           </div>
         <% end %>
         <div class="post-body">
