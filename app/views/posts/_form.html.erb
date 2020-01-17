@@ -17,7 +17,7 @@
 
   <div class="form-group">
     <i class="fas fa-camera"></i><%= f.label :title, "画像", class: "post-image-title" %><br>
-    <%= f.attachment_field :image, class: "post-image" %>
+    <%= f.attachment_field :image %>
   </div>
 
   <%= f.submit '投稿する', class: "btn btn-primary btn-block" %>
