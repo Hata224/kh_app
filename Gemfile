@@ -42,8 +42,7 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
-gem 'carrierwave'
-gem 'fog-aws'
+
 gem 'bootstrap', '~> 4.1.1'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
