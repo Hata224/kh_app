@@ -1,25 +1,44 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# クラコピ
+キャッチコピーやネーミングの提案と募集ができるアプリです。
+転職活動に使用するポートフォリオとして作成いたしました。
 
-Things you may want to cover:
+# 本番環境
+https://clacopi.com/
 
-* Ruby version
+* トップページの【かんたんログイン】から【ゲストユーザー】としてログインが可能です。閲覧用としてお使いください。
+* 【ゲストユーザー】のユーザー情報の変更はできませんのでご了承ください。
 
-* System dependencies
+# 使用技術
+* Ruby 2.6.0
+* Rails 5.2.4
+* Mysql 8.0.18
+* SASS, Bootstrap
+* Github, Git
+* RSpec
+* Unicorn
+* Nginx
+* rubocop
+* AWS(EC2, VPC, Route53, ACM, ELB)
 
-* Configuration
 
-* Database creation
+# 機能一覧
+* ユーザー登録機能(devise)
+* ログイン機能(devise)
+* 管理ユーザー機能
+* コメント機能
+* フォロー機能
+* いいね機能
+* タグ付け機能
+* 記事一覧表示機能
+* 記事投稿機能(CRUD)
+* 記事詳細表示機能
+* ユーザー一覧表示機能
+* 画像アップロード機能(refile)
+* ページネーション機能(kaminari)
+* レスポンシブデザイン(スマホサイズに対応)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# kh_app
+# 今後取り組む課題
+* Dockerを用いた環境構築
+* Circle CI/CDパイプラインの実装
