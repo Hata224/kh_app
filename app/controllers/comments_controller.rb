@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:post_id])
-    @comment = Comment.find_by(post_id: params[:post_id])
+    @comment = Comment.find_by(id: params[:id], post_id: params[:post_id])
     @comment.destroy
     if @comment.destroy
       redirect_to post_path(@post), notice: '投稿を削除しました'
