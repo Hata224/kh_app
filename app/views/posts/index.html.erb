@@ -18,12 +18,16 @@
            <%= link_to post.user.username, user_path(post.user.id), class:'post-user' %>
            <%= post.created_at.strftime("%Y年%m月%d日") %>
            <% if current_user.already_favorited?(post) %>
-           <span class="fas fa-thumbs-up like-btn-unlike"></span>
+           <%= link_to post_favorite_path(post, post.id), method: :delete do %>
+            <span class="fas fa-thumbs-up like-btn-unlike"></span>
+            <% end %>
            <% else %>
-           <span class="far fa-thumbs-up like-btn"></span>
+             <%= link_to post_favorites_path(post, post.id), method: :post do %>
+               <span class="far fa-thumbs-up like-btn"></span>
+             <% end %>
            <% end %>
            <%= post.favorites.count %>
-           <span class="far fa-comment comment-btn"></span>
+            <span class="far fa-comment comment-btn"></span>
            <%= post.comments.count %>
            <div class="post-tag">
            <%= render 'posts/tag_list', tag_list: post.tag_list %>
@@ -31,7 +35,7 @@
          </div>
         </div>
       </div>
-        <% end %>
+    <% end %>
   <%= paginate @posts %>
   </div>
  </div>
