@@ -20,4 +20,10 @@ class UsersController < ApplicationController
     @users = @user.followers
     render 'show_follower'
   end
+
+  def favorite_user_index
+    @post = Post.find_by(params[:id])
+    likes = @post.favorites.includes(:user).all.pluck(:user_id)
+    @users = User.find(likes)
+  end
 end

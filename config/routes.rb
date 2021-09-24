@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show] do
     member do
       get :following, :followers
+      get :favorite_user_index
     end
   end
 
