@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :followings, through: :following_relationships
   has_many :follower_relationships, foreign_key: 'following_id', class_name: 'Relationship', dependent: :destroy
   has_many :followers, through: :follower_relationships
+  has_many :unlikes, dependent: :destroy
+  has_many :unliked_posts, through: :unlikes, source: :post
   attachment :avatar
 
   def posts
@@ -32,6 +34,10 @@ class User < ApplicationRecord
 
   def already_favorited?(post)
     favorites.exists?(post_id: post.id)
+  end
+
+  def already_unliked?(post)
+    unlikes&.exists?(post_id: post.id)
   end
 
   def following?(other_user)
