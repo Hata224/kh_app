@@ -1,0 +1,9 @@
+<% if current_user.already_unliked?(@post) %>
+    <%= link_to post_unlike_path(@post), method: :delete do %>
+    <span class="fas fa-thumbs-down like-btn-unlike"></span>
+    <% end %>
+  <% else %>
+    <%= link_to post_unlikes_path(@post), method: :post do %><span class="far fa-thumbs-down like-btn"></span>
+    <% end %>
+  <% end %>
+  <%= @post.unlikes.count %>
