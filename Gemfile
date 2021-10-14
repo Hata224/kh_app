@@ -3,12 +3,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.0'
+ruby '2.7.4'
 
-gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.7'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
-gem 'mysql2', '0.5.2'
+gem 'mysql2'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.3'
 gem 'sass-rails', '~> 5.0'
@@ -25,8 +25,9 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'rubocop'
+  # gem 'rubocop'
   gem 'spring'
+  # gem 'parser'
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
@@ -55,9 +56,13 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'rails-i18n', '~> 5.1'
 gem 'refile', github: 'refile/refile', require: 'refile/rails'
 gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
-gem 'rmagick'
+# gem 'rmagick', '4.0.0'
 gem 'rails_admin', '~> 2.0.0.beta'
 gem 'cancancan'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'acts-as-taggable-on', '~> 6.0'
+# gem 'mini_racer'
+# gem 'therubyracer', platforms: :ruby, github: 'cowboyd/therubyracer'
+# gem 'libv8', '~> 3.16.14.0'
+gem "webpacker"
