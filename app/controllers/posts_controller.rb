@@ -6,17 +6,17 @@ class PostsController < ApplicationController
   before_action :validate_user, only: %i[edit update destroy]
 
   PER = 10
+
+  # インスタンス変数共通化
+  @favorite = Favorite.new
+
   def index
     @all_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(1000).pluck(:post_id))
-    @favorite = Favorite.new
     @posts = Post.page(params[:page]).per(PER).order(created_at: :desc)
-    @post = Post.find_by(params[:id])
-    @user = User.find_by(id: @post.user_id)
   end
 
   def show
     @post = Post.find(params[:id])
-    @favorite = Favorite.new
     @unlike = Unlike.new
     # 未実装のため一旦コメントアウト
     # @bookmark = Bookmark.new
