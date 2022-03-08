@@ -15,9 +15,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(params[:id])
+    @post = Post.find(params[:id])
     @favorite = Favorite.new
     @unlike = Unlike.new
+    # 未実装のため一旦コメントアウト
+    # @bookmark = Bookmark.new
     @user = User.find_by(id: @post.user_id)
     @comments = @post.comments.includes(:user).all
     @comment = @post.comments.build(user_id: current_user.id) if current_user
