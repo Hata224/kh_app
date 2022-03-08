@@ -58,8 +58,8 @@ class PostsController < ApplicationController
     if @post.destroy
       redirect_to posts_path, notice: '投稿を削除しました'
     else
-      redirect_to posts_path, alerts: '投稿を削除できませんでした' 
-    end   
+      redirect_to posts_path, alerts: '投稿を削除できませんでした'
+    end
   end
 
   private
