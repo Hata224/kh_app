@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   get 'pages/show'
 
   resources :users, only: %i[index show] do
-    get 'users/show_follower'
     member do
       get :favorite_user_index
+      get :show_follower
     end
   end
 
