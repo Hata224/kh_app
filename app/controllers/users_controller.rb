@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def show_follower
+    @user = User.find_by(params[:id])
+  end
+
   def favorite_user_index
     @post = Post.find_by(params[:id])
     likes = @post.favorites.includes(:user).all.pluck(:user_id)
