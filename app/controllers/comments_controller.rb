@@ -2,7 +2,6 @@
 
 class CommentsController < ApplicationController
   before_action :set_post, only: %i[create destroy validate_user]
-  before_action :validate_user, only: %i[create destroy]
 
   def create
     @comment = @post.comments.build(comment_params)
@@ -33,8 +32,4 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
   end
 
-  def validate_user
-    @comment = Comment.find_by(post_id: params[:post_id])
-    redirect_to post_path(@post), alert: '投稿者はこの操作はできません' if @post.user_id == current_user.id
-  end
 end
