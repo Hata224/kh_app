@@ -11,7 +11,8 @@ class UsersController < ApplicationController
 
   def favorite_user_index
     @post = Post.find_by(params[:id])
-    likes = @post.favorites.includes(:user).all.pluck(:user_id)
+    #一旦リファクタしたけどなんかバグってそう
+    likes = @post.favorites.pluck(:user_id)
     @users = User.find(likes)
   end
 end
