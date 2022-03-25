@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :set_post, only: %i[create destroy validate_user]
+  before_action :set_post, only: %i[create destroy]
 
   def create
     @comment = @post.comments.build(comment_params)
