@@ -19,11 +19,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find_by(id: params[:id], post_id: params[:post_id])
-    if @comment.destroy
-      flash[:notice] = '投稿を削除しました'
-    else
-      flash[:alert] = '投稿を削除できませんでした'
-    end
+    @comment.destroy ? flash[:notice] = '投稿を削除しました' : flash[:alert] = '投稿を削除できませんでした'
     redirect_to post_path(@post)
   end
 
