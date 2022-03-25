@@ -3,12 +3,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[show create]
   before_action :find_post, only: %i[show edit update destroy]
+  before_action :set_favorite, only: %i[index show]
   before_action :validate_user, only: %i[edit update destroy]
 
   PER = 10
-
-  # インスタンス変数共通化
-  @favorite = Favorite.new
 
   def index
     @all_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(1000).pluck(:post_id))
@@ -16,7 +14,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @unlike = Unlike.new
     # 未実装のため一旦コメントアウト
     # @bookmark = Bookmark.new
@@ -55,17 +52,18 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if @post.destroy
-      redirect_to posts_path, notice: '投稿を削除しました'
-    else
-      redirect_to posts_path, alerts: '投稿を削除できませんでした'
-    end
+    @post.destroy ? flash[:notice] = '投稿を削除しました' : flash[:alerts] = '投稿を削除できませんでした'
+    redirect_to posts_path
   end
 
   private
 
   def find_post
     @post = Post.find(params[:id])
+  end
+
+  def set_favorite
+    @favorite = Favorite.new
   end
 
   def post_params
