@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     # 未実装のため一旦コメントアウト
     # @bookmark = Bookmark.new
     @user = User.find_by(id: @post.user_id)
-    @comments = @post.comments.includes(:user).all
+    @comments = @post.comments.all
     @comment = @post.comments.build(user_id: current_user.id) if current_user
   end
 
